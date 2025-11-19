@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ & ติดต่อเรา</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* กล่อง login */
+        #login-page, #contact-page {
+            display: none;
+            max-width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #login-page.active,
+        #contact-page.active {
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0078ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #005fcc;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #0078ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- หน้าเข้าสู่ระบบ -->
+    <div id="login-page" class="active">
+        <h2>เข้าสู่ระบบ</h2>
+
+        <label>ชื่อผู้ใช้</label>
+        <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้">
+
+        <label>รหัสผ่าน</label>
+        <input type="password" id="password" placeholder="กรอกรหัสผ่าน">
+
+        <button onclick="login()">เข้าสู่ระบบ</button>
+    </div>
+
+    <!-- หน้าติดต่อเรา -->
+    <div id="contact-page">
+        <h2>ติดต่อเรา</h2>
+
+        <p><strong>📞 โทร:</strong> 08X-XXX-XXXX</p>
+        <p><strong>📧 อีเมล:</strong> example@mail.com</p>
+
+        <label>ชื่อ</label>
+        <input type="text" placeholder="ชื่อของคุณ">
+
+        <label>อีเมล</label>
+        <input type="email" placeholder="อีเมลของคุณ">
+
+        <label>ข้อความ</label>
+        <textarea rows="5" placeholder="เขียนข้อความของคุณ"></textarea>
+
+        <button>ส่งข้อความ</button>
+
+        <div class="back" onclick="goBack()">⬅️ ออกจากระบบ</div>
+    </div>
+
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            // ตัวอย่างง่ายๆ ไม่ตรวจสอบจริง
+            if (user !== "" && pass !== "") {
+                document.getElementById("login-page").classList.remove("active");
+                document.getElementById("contact-page").classList.add("active");
+            } else {
+                alert("กรุณากรอกชื่อผู้ใช้และรหัสผ่าน");
+            }
+        }
+
+        function goBack() {
+            document.getElementById("contact-page").classList.remove("active");
+            document.getElementById("login-page").classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
