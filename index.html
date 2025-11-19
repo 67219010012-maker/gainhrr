@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>เข้าสู่ระบบ</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #dfe7fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            background: #fff;
+            padding: 30px;
+            width: 340px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0078ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover { background: #005fcc; }
+    </style>
 </head>
+
 <body>
-    loogogkhbkhbkkhkhhhhhh
+
+    <div class="login-card">
+        <h2>เข้าสู่ระบบ</h2>
+
+        <!-- เมื่อกดเข้าสู่ระบบ จะไป contact.html -->
+        <form action="contact.html" method="GET">
+            <label>ชื่อผู้ใช้</label>
+            <input type="text" name="username" required placeholder="ชื่อผู้ใช้">
+
+            <label>รหัสผ่าน</label>
+            <input type="password" name="password" required placeholder="รหัสผ่าน">
+
+            <button type="submit">เข้าสู่ระบบ</button>
+        </form>
+    </div>
+
 </body>
 </html>
